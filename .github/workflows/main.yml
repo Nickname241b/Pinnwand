@@ -1,4 +1,5 @@
 name: Replacer
+
 on:
   workflow_dispatch:
 
@@ -6,29 +7,31 @@ permissions:
   contents: write
 
 jobs:
-  TEST:
+  replace-and-commit:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Replace
+
+      - name: Append to List
         env:
           ADD_VARIABLE: ${{ vars.ADD_VARIABLE }}
         run: |
-          export ADD_VARIABLE
-          envsubst < indextemp.html > index.tmp
-          mv index.tmp index.html
+          envsubst < indextemp.html >> index.html
+          sed -i "s|<li>\${ADD_VARIABLE}</li>|<li>${ADD_VARIABLE}</li>\n            <li>\${ADD_VARIABLE}</li>|" indextemp.html
 
       - name: Commit and push
         run: |
-          echo ""
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
+          
 
-          git add index.html
-
-          if ! git diff --staged --quiet; then
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git add index.html
             git commit -m "Added something"
             git push
           fi
