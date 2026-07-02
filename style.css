@@ -1,0 +1,34 @@
+body {
+    border: blue solid 1px;
+    font-family: "Adwaita Mono", monospace;
+}
+
+#container {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    gap: 8px;
+    border: inherit;
+}
+#header {
+    border: inherit;
+    display: flex;
+    justify-content: center;
+    font-size: 200%;
+    font-family: inherit;
+}
+
+#List {
+    border: inherit;
+}
+#text {
+    border: inherit;
+    margin: 0;
+}
+
+no {
+    font-style:revert ;
+}

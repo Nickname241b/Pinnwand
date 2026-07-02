@@ -16,7 +16,7 @@ jobs:
         env:
           ADD_VARIABLE: ${{ vars.ADD_VARIABLE }}
         run: |
-          export MAIN_VARIABLE
+          export ADD_VARIABLE
           envsubst < indextemp.html > index.tmp
           mv index.tmp index.html
 
@@ -29,6 +29,6 @@ jobs:
           git add index.html
 
           if ! git diff --staged --quiet; then
-            git commit -m "Update index.html"
+            git commit -m "Added something"
             git push
           fi
