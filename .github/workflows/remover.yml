@@ -1,4 +1,4 @@
-name: Checkoff
+name: Remover
 on:
   workflow_dispatch:
 

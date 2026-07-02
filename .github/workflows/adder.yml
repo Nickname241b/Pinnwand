@@ -1,4 +1,4 @@
-name: Replacer
+name: Adder
 
 on:
   workflow_dispatch:
