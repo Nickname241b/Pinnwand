@@ -3,6 +3,7 @@
     --secondary-color: #2980b9;
     --text-color: #333;
     --light-gray: #f5f5f5;
+    --done: gray;
     --border-radius: 8px;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
@@ -61,6 +62,10 @@ body {
     border-left: 4px solid var(--primary-color);
     transition: var(--transition);
     font-size: 1rem;
+}
+
+#List .done {
+    border-left: 4px solid var(--done);
 }
 
 #List li:hover {
