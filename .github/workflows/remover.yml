@@ -16,8 +16,7 @@ jobs:
         env:
           S_VARIABLE: ${{ vars.S_VARIABLE }}
         run: |
-          export S_VARIABLE
-          sed -i "s/<li>$S_VARIABLE<\/li>/<li class=\"done\"><s>$S_VARIABLE<\/s><\/li>/g" index.html
+          sed -i "s|<li>$S_VARIABLE</li>|<li class=\"done\"><s>$S_VARIABLE</s></li>|" index.html
 
       - name: Commit and push
         run: |
