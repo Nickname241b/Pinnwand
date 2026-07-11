@@ -19,8 +19,7 @@ jobs:
         env:
           ADD_VARIABLE: ${{ vars.ADD_VARIABLE }}
         run: |
-          LI_TAG="<li>$ADD_VARIABLE</li>"
-          sed -i "/<\/ul>/i $LI_TAG" index.html
+          sed -i "10i <li>$ADD_VARIABLE</li>" index.html
 
       - name: Commit and push
         run: |
