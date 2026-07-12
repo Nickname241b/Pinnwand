@@ -7,9 +7,8 @@
     --border-radius: 8px;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
-    --mobile-padding: 10px;
-    --mobile-font-size: 1rem;
 }
+
 
 * {
     margin: 0;
@@ -22,12 +21,11 @@ body {
     background-color: var(--light-gray);
     color: var(--text-color);
     line-height: 1.6;
-    padding: 20px;
     font-size: 1rem;
+    padding: 10px;
 }
 
 #container {
-    max-width: 800px;
     margin: 0 auto;
     background-color: white;
     border-radius: var(--border-radius);
@@ -38,7 +36,8 @@ body {
 #Header {
     background-color: var(--primary-color);
     color: white;
-    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 1.8rem;
     font-weight: bold;
     text-align: center;
@@ -51,6 +50,10 @@ body {
 
 #List ul {
     list-style-type: none;
+    width: fit-content;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
 }
 
 #List li {
@@ -62,6 +65,7 @@ body {
     border-left: 4px solid var(--primary-color);
     transition: var(--transition);
     font-size: 1rem;
+    width: fit-content;
 }
 
 #List .done {
@@ -71,63 +75,4 @@ body {
 #List li:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Tablet adjustments */
-@media (max-width: 768px) {
-    #container {
-        margin: 0 10px;
-    }
-
-    #Header {
-        font-size: 1.5rem;
-        padding: 15px;
-    }
-
-    #List {
-        padding: 15px;
-    }
-
-    #List li {
-        padding: 12px;
-    }
-}
-
-/* Phone*/
-@media (max-width: 480px) {
-    body {
-        padding: var(--mobile-padding);
-        font-size: var(--mobile-font-size);
-    }
-
-    #container {
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
-        border: 1px solid #ddd;
-    }
-
-    #Header {
-        font-size: 1.5rem;
-        padding: 14px var(--mobile-padding);
-        position: sticky;
-        top: 0;
-        z-index: 10;
-    }
-
-    #List {
-        padding: var(--mobile-padding);
-    }
-
-    #List li {
-        padding: 14px;
-        margin-bottom: 10px;
-        border-left: 4px solid var(--primary-color);
-        font-size: 1.6rem;
-        line-height: 1.5;
-    }
-    
-    #List ul {
-        width: 100%;
-    }
 }
