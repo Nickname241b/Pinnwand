@@ -1,6 +1,5 @@
 :root {
     --primary-color: #3498db;
-    --secondary-color: #2980b9;
     --text-color: #333;
     --light-gray: #f5f5f5;
     --done: gray;
@@ -54,7 +53,7 @@ body {
     list-style-type: none;
     width: fit-content;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
 }
 
 #List li {
@@ -72,6 +71,7 @@ body {
 
 #List .done {
     border-left: 4px solid var(--done);
+    color: var(--done);
 }
 
 #List li:hover {
